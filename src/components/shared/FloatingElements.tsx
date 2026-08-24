@@ -1,8 +1,25 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
-import { MessageCircle, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+/**
+ * Custom WhatsApp icon SVG to match brand style precisely.
+ */
+const WhatsAppIcon = ({ className }: { className?: string }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+  </svg>
+);
 
 export function WhatsAppButton() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -47,7 +64,8 @@ export function WhatsAppButton() {
         whileTap={{ scale: 0.95 }}
       >
         <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 relative">
-          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 relative z-10" />
+          {/* Centered WhatsApp icon */}
+          <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 relative z-10" />
           <motion.div
             className="absolute inset-0 rounded-full border-2 border-primary"
             animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
@@ -70,8 +88,6 @@ export function WhatsAppButton() {
     </div>
   );
 }
-
-
 
 export function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
