@@ -40,7 +40,7 @@ export function WhatsAppButton() {
         rel="noopener noreferrer"
         onMouseEnter={() => setIsExpanded(true)}
         onMouseLeave={() => setIsExpanded(false)}
-        className="relative flex items-center bg-accent text-white rounded-pill shadow-lg overflow-hidden group h-12 sm:h-14"
+        className="relative flex items-center bg-primary text-white rounded-pill shadow-lg overflow-hidden group h-12 sm:h-14"
         initial={{ width: 48 }}
         animate={{ width: isExpanded ? "auto" : 48 }}
         whileHover={{ scale: 1.05 }}
@@ -49,7 +49,7 @@ export function WhatsAppButton() {
         <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 relative">
           <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 relative z-10" />
           <motion.div
-            className="absolute inset-0 rounded-full border-2 border-accent"
+            className="absolute inset-0 rounded-full border-2 border-primary"
             animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
           />
